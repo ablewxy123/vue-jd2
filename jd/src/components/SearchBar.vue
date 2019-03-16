@@ -44,6 +44,7 @@
 		width: 100%;
 		top: 0px;
 		left: 0px;
+		z-index: 999;
 	}
 	.fixed{
 		background-color: deeppink;
