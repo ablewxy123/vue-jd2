@@ -1,6 +1,6 @@
 <template>
 
-	<div class="search-bar flex" :class="{fixed:isFixed}">
+	<div class="search-bar flex" v-bind:class="{fixed:isFixed}">
 		<div class="category"></div>
 		<div class="search-form flex-item">
 			<span class="jd-icon"></span>
@@ -16,7 +16,7 @@
 	export default {
 		data: function() {
 			return {
-				isFixed:false	
+				isFixed:false
 			};
 		},
 		methods: {},
@@ -39,16 +39,17 @@
 <style scoped="scoped">
 	.search-bar {
 		height: 0.88rem;
-		background-color: #e43130;
 		position: fixed;
 		width: 100%;
 		top: 0px;
 		left: 0px;
-		z-index: 999;
+		z-index:9999;
 	}
+	
 	.fixed{
-		background-color: deeppink;
+		background-color: #e43130;
 	}
+	
 	.category {
 		margin: 0.28rem 0 0 0.30rem;
 		width: 0.40rem;

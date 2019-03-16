@@ -1,12 +1,13 @@
 <template>
+
 	<div class="product">
 		<div style="background-color: #FFFFFF;">
 			<router-link :to="{path:'/product',query:{id:id}}">
-			
-			<div class="product-image">
-				<img :src="image" />
-			</div>
-			<div class="product-title" v-text="title"></div>
+
+				<div class="product-image">
+					<img :src="image" />
+				</div>
+				<div class="product-title" v-text="title"></div>
 			</router-link>
 			<div class="product-inof clear">
 				<div class="product-price left">￥ <span v-text="price"></span> </div>
@@ -16,11 +17,12 @@
 			</div>
 		</div>
 	</div>
+
 </template>
 
 <script>
-	export default{
-		data(){
+	export default {
+		data() {
 			return {};
 		},
 		props: {
@@ -48,27 +50,37 @@
 
 <style>
 	.product-list {
+		background-color: red;
 	}
+	
 	.product {
 		width: 50%;
 		padding: 0px 2px 4px 0;
 		box-sizing: border-box;
 		float: left;
 	}
+	
+	.product a {
+		display: block;
+	}
+	
 	.product-list .product:nth-child(2n) {
 		padding: 0px 0 4px 2px;
 	}
+	
 	.product-image {
 		width: 100%;
 		background-color: #FFFFFF;
 	}
+	
 	.product-image img {
 		width: 100%;
 	}
-	.product-inof{
+	
+	.product-inof {
 		height: 0.52rem;
-		margin-top: 0.2rem;
 	}
+	
 	.product-title {
 		box-sizing: border-box;
 		height: 0.6rem;
@@ -80,12 +92,12 @@
 		-webkit-box-orient: vertical;
 		word-break: break-word;
 		color: #232326;
-		padding-top: 0.1rem;
 		line-height: 0.32rem;
-		padding-bottom: 0.06rem;
 		padding: 0 0.08rem;
-		background-color: #FFFFFF;
+		margin-top: 0.1rem;
+		margin-bottom: 0.06rem;
 	}
+	
 	.product-price {
 		color: #f23030;
 		display: inline-block;
@@ -95,6 +107,7 @@
 		height: 0.5rem;
 		line-height: 0.5rem;
 	}
+	
 	.product-price span {
 		font-size: 0.32rem;
 	}
@@ -113,5 +126,4 @@
 		height: 0.48rem;
 		line-height: 0.5rem;
 	}
-	
 </style>
