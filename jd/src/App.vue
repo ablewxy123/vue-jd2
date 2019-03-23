@@ -46,6 +46,10 @@
 		flex: 1;
 	}
 	
+	.flex-column{
+		flex-flow: column;
+	}
+	
 	a {
 		text-decoration: none;
 		color: #333333;
