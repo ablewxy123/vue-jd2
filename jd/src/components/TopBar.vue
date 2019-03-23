@@ -75,6 +75,7 @@
 		top: 0px;
 		left: 0px;
 		border-bottom: 1px solid #e5e5e5;
+		background: #FFFFFF;
 	}
 	
 	.top-bar .back-icon {
