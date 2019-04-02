@@ -3,13 +3,21 @@
 	<div class="product">
 
 		<top-bar>
-
 			<ul class="flex top-nav">
 				<li class="flex-item" :class="{active:navIndex==index}" v-for="(item,index) in nav" :key="index" @click="scroll(index)">
 					<span v-text="item.title"></span>
 				</li>
 			</ul>
 		</top-bar>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" v-for="(item,index) in images">
+					<img :src="item.src" />
+				</div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
 
 		<div ref="goods" style="height: 1500px;background-color: red;"></div>
 		<div ref="comment" style="height: 1002px;background-color: green;"></div>
@@ -24,6 +32,8 @@
 <script>
 	import TopBar from "@/components/TopBar";
 	import ProductBtn from "@/components/ProductBtn";
+	import Swiper from "swiper";
+	import "swiper/dist/css/swiper.css";
 
 	export default {
 		data() {
