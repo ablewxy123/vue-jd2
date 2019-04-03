@@ -1,6 +1,4 @@
 <template>
-import { EILSEQ } from 'constants';
-import { type } from 'os';
     <div class="check-box" :class="{checked:check}" @click="onChange" >
 
     </div>
@@ -10,7 +8,7 @@ import { type } from 'os';
         data(){
             return{
                 check:false,
-                selected:[],
+                selected:[]
             }
         },
         model:{
@@ -23,51 +21,58 @@ import { type } from 'os';
                 default:false,
             },
             value:{
-                default:'',
+                default:''
             }
         },
         created(){
             if(typeof this.arr == 'boolean'){
-                 this.check=this.arr;
+                this.check=this.arr;
             }else if(typeof this.arr == 'object'){
-                this.selected = this.arr;
-                let flag = false;
+                this.selected=this.arr;
+                let falg = false;
                 this.selected.forEach(item => {
-                    if(item == this.value){
-                        flag = true;
+                    if(item = this.value){
+                        falg = true;
                     }
                 });
-                this.check=flag;
-            }
-           
+                this.cleck = falg;
+            } 
         },
         watch:{
             arr(val){
-                 if(typeof val== 'boolean'){
+                if(typeof val== 'boolean'){
                     this.check=val;
                 }else if(typeof val == 'object'){
-                    this.selected = val;
-                    let flag = false;
+                    this.selected=val;
+                    let falg = false;
                     this.selected.forEach(item => {
-                        if(item == this.value){
-                            flag = true;
+                        if(item = this.value){
+                            falg = true;
                         }
-                 });
-                    this.check=flag;
+                    });
+                    this.cleck = falg;
+                } 
             }
-            },
-            
-
         },
         methods:{
             onChange(){
                 this.check = !this.check;
-                 if(typeof val== 'boolean'){
-                     this.$emit('input',this.check);
-                 }else{
-                     this.$emit('input',this.selected);
-                 }
-                
+                if(this.check){
+                    this.selected.push(this.value)
+                }else{
+					var index = 0;
+					this.selected.forEach((item,inx)=>{
+						if(item==this.value){
+							index = inx;
+						}
+					});
+					this.selected.splice(index,1);
+				}
+                if(typeof this.arr == 'boolean'){
+                    this.$emit('input',this.check);  
+                }else{
+                    this.$emit('input',this.selected);  
+                }
             }
         }
 

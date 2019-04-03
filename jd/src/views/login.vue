@@ -1,5 +1,4 @@
 <template>
-	
 	<div class="login">
 		
 		<top-bar>
@@ -10,9 +9,12 @@
 		
 		
 	</div>
+	
+	
 </template>
 
 <script>
+	
 	import TopBar from "@/components/TopBar";
 	
 	export default{
@@ -22,13 +24,16 @@
 		}
 		
 	}
+	
 </script>
 
 <style>
+	
 	.login .title{
 		line-height: 0.9rem;
 		text-align: center;
 		font-size: 0.34rem;
 		color: #222;
 	}
+	
 </style>

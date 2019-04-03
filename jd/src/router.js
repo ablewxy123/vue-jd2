@@ -5,6 +5,7 @@ import User from './views/User.vue'
 import Shopping from './views/Shopping.vue'
 import Category from './views/Category.vue'
 import Search from './views/Search.vue'
+import Login from './views/login.vue'
 import Product from './views/Product.vue'
 
 Vue.use(Router)
@@ -33,8 +34,8 @@ export default new Router({
 		name: 'search',
 		component: Search
 	}, {
-		path: '/product',
-		name: 'product',
-		component: Product
+		path: '/login',
+		name: 'login',
+		component: Login
 	}]
 })
