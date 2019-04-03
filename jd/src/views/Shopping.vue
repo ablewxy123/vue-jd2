@@ -10,21 +10,30 @@
 		<div>
 			<div>{{agree}}</div>
 			<label>
-				<input type="checkbox" v-model="agree" >
+				<input type="checkbox" v-model="agree" >同意注册协议
+			</label>
+		</div>
+		<div>
+			<div>{{agree}}</div>
+			<label>
+				<check-box v-model="agree"></check-box>同意注册协议
 			</label>
 		</div>
 	</div>
 </template>
 
 <script>
-	import TabBar from "@/components/TabBar.vue";
+	import CheckBox from "@/components/CheckBox.vue";
 	export default{
 		data(){
 			return{
 				hobby:[],
 				agree:true,
 
-			}
+			} 
+		},
+		components:{
+			CheckBox,
 		}
 	}
 </script>
